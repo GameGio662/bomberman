@@ -6,11 +6,15 @@ using UnityEngine;
 public class MyPlayer : MonoBehaviour
 {
     [SerializeField] float speed;
+
     bool move;
+    Vector3 pos;
 
     Rigidbody rb;
+
     void Start()
     {
+        pos = transform.position;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -26,7 +30,10 @@ public class MyPlayer : MonoBehaviour
             rb.velocity = new Vector3(-speed, 0, 0);
             move = true;
         }
-        else move = false;
+        else
+        {
+            move = false;
+        }
 
         if (Input.GetKey(KeyCode.S))
         {
@@ -47,10 +54,16 @@ public class MyPlayer : MonoBehaviour
         }
 
 
-
         if (move == false)
         {
+            if (pos.z % 1 != 0)
+                Mathf.Round(pos.z);
+
+            if (pos.x % 1 != 0)
+                Mathf.Round(pos.x);
+
             rb.velocity = Vector3.zero;
+            rb.inertiaTensor = Vector3.zero;
         }
     }
 }
