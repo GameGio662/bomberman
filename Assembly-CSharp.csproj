@@ -57,9 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\MyPlayer.cs" />
-    <Compile Include="Assets\Script\Map.cs" />
-    <Compile Include="Assets\Script\IronWall.cs" />
     <Compile Include="Assets\Script\BreakWall.cs" />
+    <Compile Include="Assets\Script\IronWall.cs" />
+    <Compile Include="Assets\Script\Map.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
